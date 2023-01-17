@@ -105,5 +105,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return $this->photo;
     }
-
+    public static function isAdmin()
+    {
+        return User::findOne(Yii::$app->user->id)->isAdmin;
+    }
 }
